@@ -49,6 +49,7 @@ class NeteaseNewsSpider(CrawlSpider):
     8. 程序在取得各个页面的items前，会先处理完之前所有的request队列里的请求，然后再提取items。
     9. 这一切的一切，Scrapy引擎和调度器将负责到底。
     '''
+
     def parse_news(self, response):
         sel = Selector(response)
         pattern = re.match(self.url_pattern, str(response.url))
